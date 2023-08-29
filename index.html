@@ -12,8 +12,9 @@
 
 <body>
     <!-- Navbar -->
+    <!-- TODO: make projects a dropdown -->
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-        <div class="container">
+        <div class="container-fluid">
             <a href="index.html" class="navbar-brand">Home</a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
@@ -22,11 +23,27 @@
 
             <div class="collapse navbar-collapse" id="navmenu">
                 <ul class="navbar-nav ms-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Dropdown
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
                     <li class="nav-item">
                         <a href="nerdle.html" class="nav-link">Nerdle</a>
                     </li>
                     <li class="nav-item">
-                        <a href="nerdle.html" class="nav-link">Second page</a>
+                        <a href="numerical_pde.html" class="nav-link">Numerical PDEs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="CV.html" class="nav-link">CV to come</a>
                     </li>
                 </ul>
             </div>
