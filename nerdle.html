@@ -42,97 +42,97 @@
             <div class="d-sm-flex">
                 <div>
                     <h1>Nerdle Analyzer</h1>
-                    <p>Put in your Nerdle guesses and the color responses to see the possible equations remaining. Use B for Black, P for Purple, and G for green (case insensitive).</p>
+                    <p>Put in your Nerdle guesses and the pattern responses to see the possible equations remaining. Use B for Black, P for Purple, and G for green (case insensitive).</p>
                 </div>
             </div>
         </div>
     </section>
 
+
     <!-- Actual calculator -->
-    <!-- first, I'l design the form -->
     <section class="text-start">
         <div class="container-sm" style="max-width: 720px">
             <div class="row g-2 mb-2">
                 <div class="col">
                     <div class="form-floating">
-                        <input type="text" class="form-control" id="guess_1" placeholder="1st guess">
-                        <label for="floatingInputGrid">1st guess</label>
+                        <input type="text" class="form-control" name="guess" placeholder="1st guess">
+                        <label>1st guess</label>
                     </div>
                 </div>
                 <div class="col">
                     <div class="form-floating">
-                        <input type="text" class="form-control" id="color_1" placeholder="Color pattern">
-                        <label for="floatingInputGrid">Color pattern</label>
-                    </div>
-                </div>
-            </div>
-            <div class="row g-2 mb-2">
-                <div class="col">
-                    <div class="form-floating">
-                        <input type="text" class="form-control" id="guess_2" placeholder="2nd guess">
-                        <label for="floatingInputGrid">2nd guess</label>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="form-floating">
-                        <input type="text" class="form-control" id="color_2" placeholder="Color pattern">
-                        <label for="floatingInputGrid">Color pattern</label>
+                        <input type="text" class="form-control" name="pattern" placeholder="Color pattern">
+                        <label>Color pattern</label>
                     </div>
                 </div>
             </div>
             <div class="row g-2 mb-2">
                 <div class="col">
                     <div class="form-floating">
-                        <input type="text" class="form-control" id="guess_3" placeholder="3rd guess">
-                        <label for="floatingInputGrid">3rd guess</label>
+                        <input type="text" class="form-control" name="guess" placeholder="2nd guess">
+                        <label>2nd guess</label>
                     </div>
                 </div>
                 <div class="col">
                     <div class="form-floating">
-                        <input type="text" class="form-control" id="color_3" placeholder="Color pattern">
-                        <label for="floatingInputGrid">Color pattern</label>
-                    </div>
-                </div>
-            </div>
-            <div class="row g-2 mb-2">
-                <div class="col">
-                    <div class="form-floating">
-                        <input type="text" class="form-control" id="guess_4" placeholder="4th guess">
-                        <label for="floatingInputGrid">4th guess</label>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="form-floating">
-                        <input type="text" class="form-control" id="color_4" placeholder="Color pattern">
-                        <label for="floatingInputGrid">Color pattern</label>
+                        <input type="text" class="form-control" name="pattern" placeholder="Color pattern">
+                        <label>Color pattern</label>
                     </div>
                 </div>
             </div>
             <div class="row g-2 mb-2">
                 <div class="col">
                     <div class="form-floating">
-                        <input type="text" class="form-control" id="guess_5" placeholder="5th guess">
-                        <label for="floatingInputGrid">5th guess</label>
+                        <input type="text" class="form-control" name="guess" placeholder="3rd guess">
+                        <label>3rd guess</label>
                     </div>
                 </div>
                 <div class="col">
                     <div class="form-floating">
-                        <input type="text" class="form-control" id="color_5" placeholder="Color pattern">
-                        <label for="floatingInputGrid">Color pattern</label>
+                        <input type="text" class="form-control" name="pattern" placeholder="Color pattern">
+                        <label>Color pattern</label>
                     </div>
                 </div>
             </div>
             <div class="row g-2 mb-2">
                 <div class="col">
                     <div class="form-floating">
-                        <input type="text" class="form-control" id="guess_6" placeholder="6th guess">
-                        <label for="floatingInputGrid">6th guess</label>
+                        <input type="text" class="form-control" name="guess" placeholder="4th guess">
+                        <label>4th guess</label>
                     </div>
                 </div>
                 <div class="col">
                     <div class="form-floating">
-                        <input type="text" class="form-control" id="color_6" placeholder="Color pattern">
-                        <label for="floatingInputGrid">Color pattern</label>
+                        <input type="text" class="form-control" name="pattern" placeholder="Color pattern">
+                        <label>Color pattern</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-2 mb-2">
+                <div class="col">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" name="guess" placeholder="5th guess">
+                        <label>5th guess</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" name="pattern" placeholder="Color pattern">
+                        <label>Color pattern</label>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-2 mb-2">
+                <div class="col">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" name="guess" placeholder="6th guess">
+                        <label>6th guess</label>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="form-floating">
+                        <input type="text" class="form-control" name="pattern" placeholder="Color pattern">
+                        <label>Color pattern</label>
                     </div>
                 </div>
             </div>
@@ -142,8 +142,12 @@
                     <button type="submit" id="analyze" class="btn btn-primary">Analyze (doesn't work yet)</button>
                 </div>
             </div>
-            <div class="row g-2" id="output_box">
 
+            <div class="row g-2">
+                <div class="col"  id="output_box">
+                    
+                </div>
+                <p></p>
             </div>
         </div>      
     </section>
