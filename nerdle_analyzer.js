@@ -69,17 +69,62 @@ const analyze = function () {
         }
     }
 
-    // at this point, the input has been sanitized and validated. 
+    // At this point, the input has been sanitized and validated. 
+    // Now, we can actually compute the remaining possibilities
+    let perGuessPossibilities = []
+    for (let i = 0; i < numGuesses; i++) {
+        let guess = guesses[i]
+        let pattern = patterns[i]
+        perGuessPossibilities.push(getPossibilities(guess, pattern))
+        console.log(perGuessPossibilities[i])
+    }
 
-    
+    let remainingPossibilities = []
+    remainingPossibilities.push(new Set(perGuessPossibilities[0]))
+    for (let i = 1; i < numGuesses; i++) {
+        let remaining = new Set(perGuessPossibilities[i].filter(
+            possibility => remainingPossibilities[i - 1].has(possibility)
+        ))
+        remainingPossibilities.push(remaining)
+    }
 
-    outputBox.innerHTML = guesses[0]
+    let output = []
+    for (let i = 0; i < numGuesses; i++) {
+        let ordinal = ""
+        let pluralizedPossibilities = "possibilities"
+        switch (i) {
+            case 0:
+                ordinal = "1st"
+                break
+            case 1:
+                ordinal = "2nd"
+                break
+            case 2:
+                ordinal = "3rd"
+                break
+            case 3:
+                ordinal = "4th"
+                break
+            case 4:
+                ordinal = "5th"
+                break
+            case 5:
+                ordinal = "6th"
+                break
+        }
+        if (remainingPossibilities[i].size == 1) {
+            pluralizedPossibilities = "possibility"
+        }
+        output.push("After your " + ordinal + " guess, " + remainingPossibilities[i].size.toString() + " " + pluralizedPossibilities + " remained.")
+    }
+
+    outputBox.innerHTML = output.join("<br>")
 }
 
 const getColorPattern = function (guess, answer) {
     pattern = ['b', 'b', 'b', 'b', 'b', 'b', 'b', 'b']
     let remainingCounter = {}
-    for (i = 0; i < 8; i++) {
+    for (let i = 0; i < 8; i++) {
         const ansChar = answer.charAt(i)
         const guessChar = guess.charAt(i)
         if (!(ansChar in remainingCounter)) {
@@ -90,13 +135,13 @@ const getColorPattern = function (guess, answer) {
         }
         remainingCounter[ansChar]++
     }
-    for (i = 0; i < 8; i++) {
+    for (let i = 0; i < 8; i++) {
         if (guess.charAt(i) == answer.charAt(i)) {
             pattern[i] = 'g'
             remainingCounter[guess.charAt(i)]--
         }
     }
-    for (i = 0; i < 8; i++) {
+    for (let i = 0; i < 8; i++) {
         const guessChar = guess.charAt(i)
         if (remainingCounter[guessChar] > 0 && pattern[i] != 'g') {
             remainingCounter[guessChar]--
