@@ -64,7 +64,7 @@ const analyze = function () {
         }
 
         if (!patternRegex.test(patterns[i])) {
-            outputBox.innerHTML = "Pattern " + (i + 1).toString() + " appears to have characters other than 'GB', 'P', and 'G' (case insensitive)."
+            outputBox.innerHTML = "Pattern " + (i + 1).toString() + " appears to have characters other than 'B', 'P', and 'G' (case insensitive)."
             return
         }
     }
@@ -163,13 +163,3 @@ const getPossibilities = function (initialGuess, pattern) {
 }
 
 analyzeButton.addEventListener('click', analyze)
-// analyzeButton.addEventListener('click',
-//     () => {
-//         getColorPattern('7*8+5=61', '91-75=16')
-//     }
-// )
-// analyzeButton.addEventListener('click',
-//     () => {
-//         console.log(getPossibilities('7*8+5=61', 'bbbbbgbb'))
-//     }
-// )
